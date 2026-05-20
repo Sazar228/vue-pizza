@@ -1,17 +1,17 @@
 <template>
-  <div class="flex flex-col items-center p-2 rounded-xl w-3xs mt-5">
+  <div class="flex flex-col items-center p-2 rounded-xl w-3xs mt-5 card">
     <!-- cartochka  -->
     <img :src="image" alt="" class="w-3xs ml-3 pointer-events-none" />
     <h1 class="font-bold mb-3">{{ name }}</h1>
     <div
-      class="mt-2 w-full h-20 flex flex-col items-center bg-gray-100 rounded-xl p-2 font-bold"
+      class="mt-2 w-full h-22 flex flex-col items-center bg-gray-100 rounded-xl p-2 font-bold"
     >
       <div class="flex gap-2 mb-2 items-center w-full">
         <button
           @click="changeType(id, 'thin')"
           class="transition-colors duration-200 ease-in-out transform hover:scale-105 active:scale-95"
           :class="[
-            'flex-1 text-sm h-7 rounded',
+            'flex-1 h-8 rounded',
             defType === 'thin' ? 'bg-white' : 'bg-gray-100',
           ]"
         >
@@ -21,7 +21,7 @@
           @click="changeType(id, 'traditional')"
           class="transition-colors duration-200 ease-in-out transform hover:scale-105 active:scale-95"
           :class="[
-            'flex-1 text-sm h-7 rounded',
+            'flex-1 text-sm h-8 rounded',
             defType === 'traditional' ? 'bg-white' : 'bg-gray-100',
           ]"
         >
@@ -132,4 +132,81 @@ export default {
 .fade-leave-to {
   opacity: 0;
 }
+.card {
+  max-width: 320px;
+  margin: 20px auto;
+  padding: 15px;
+  border-radius: 12px;
+}
+
+.card img {
+  display: block;
+  max-width: 100%;
+  height: auto;
+  margin: 0 auto 10px;
+}
+
+.card h1 {
+  font-size: 1.2rem;
+  text-align: center;
+  margin-bottom: 10px;
+}
+
+.card button {
+  font-size: 0.9rem;
+  padding: 8px;
+  border-radius: 8px;
+  flex: 1;
+}
+
+.card .price {
+  font-size: 1.2rem;
+  font-weight: bold;
+}
+
+@media (max-width: 768px) {
+  .card {
+    max-width: 90%;
+    padding: 12px;
+  }
+
+  .card h1 {
+    font-size: 1rem;
+  }
+
+  .card button {
+    font-size: 0.8rem;
+    padding: 6px;
+  }
+
+  .card .price {
+    font-size: 1rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .card {
+    max-width: 100%;
+    padding: 10px;
+  }
+
+  .card h1 {
+    font-size: 0.9rem;
+  }
+
+  .card button {
+    font-size: 0.75rem;
+    padding: 5px;
+  }
+
+  .card .price {
+    font-size: 0.9rem;
+  }
+
+  .card .flex {
+    flex-direction: column;
+    gap: 8px;
+  }
+}
+
 </style>

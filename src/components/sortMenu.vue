@@ -1,5 +1,5 @@
   <template>
-    <div class="flex gap-4">
+    <div class="flex gap-4 categories">
       <button
       @click="filters.searchBtn = cat.name"
       v-for="cat in categories"
@@ -43,4 +43,36 @@
     transform: translateY(-10px) scale(1.03);
     box-shadow: 0 15px 30px rgba(0, 0, 0, 0.15);
   }
+.categories {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+}
+
+@media (max-width: 768px) {
+  .categories {
+    justify-content: center;
+    gap: 10px;
+  }
+
+  .categories button {
+    font-size: 0.9rem;
+    padding: 8px 12px;
+  }
+}
+
+@media (max-width: 480px) {
+  .categories {
+    flex-direction: column;
+    align-items: center;
+    gap: 8px;
+  }
+
+  .categories button {
+    width: 100%;
+    font-size: 0.85rem;
+    padding: 6px 10px;
+  }
+}
+
   </style>

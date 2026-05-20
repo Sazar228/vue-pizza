@@ -53,4 +53,62 @@ import { inject } from 'vue';
   transform: translateY(-5px) scale(1.03);
   box-shadow: 0 15px 30px rgba(0, 0, 0, 0.15);
 }
+header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 20px;
+  border-bottom: 1px solid #cbd5e1;
+}
+
+@media (max-width: 768px) {
+  header {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 15px;
+  }
+
+  header h1 {
+    font-size: 1.2rem;
+  }
+
+  header p {
+    font-size: 0.9rem;
+  }
+
+  .all_mini {
+    width: 100%;
+    justify-content: space-around;
+  }
+}
+
+@media (max-width: 480px) {
+  header {
+    padding: 10px;
+  }
+
+  header h1 {
+    font-size: 1rem;
+  }
+
+  header p {
+    font-size: 0.8rem;
+  }
+
+  .all_mini {
+    width: 100%;
+    height: auto;
+    padding: 8px;
+    font-size: 0.8rem;
+  }
+
+  .all_mini p {
+    margin: 0;
+  }
+
+  .all_mini img {
+    width: 14px;
+  }
+}
+
 </style>

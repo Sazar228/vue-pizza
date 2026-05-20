@@ -82,7 +82,7 @@ export default {
 </script>
 
 <template>
-  <div class="w-4/5 bg-white m-auto rounded-xl mt-10 shadow-xl mb-3">
+  <div class="w-4/5 bg-white m-auto rounded-xl mt-10 shadow-xl mb-3 main-container">
     
     <Header />
     <RouterView
@@ -93,4 +93,34 @@ export default {
   </div>
 </template>
 
-<style scoped></style>
+<style scoped>
+/* Базовые стили */
+.main-container {
+  width: 80%;
+  margin: 40px auto 20px;
+  background: #fff;
+  border-radius: 12px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+  padding: 20px;
+}
+
+/* Для планшетов */
+@media (max-width: 768px) {
+  .main-container {
+    width: 95%;
+    margin: 20px auto;
+    padding: 15px;
+  }
+}
+
+/* Для телефонов */
+@media (max-width: 480px) {
+  .main-container {
+    width: 100%;
+    margin: 10px auto;
+    padding: 10px;
+    border-radius: 8px;
+  }
+}
+
+</style>

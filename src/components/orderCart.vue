@@ -1,5 +1,5 @@
 <template>
-  <div v-auto-animate class="w-5/6 m-auto p-10">
+  <div v-auto-animate class="w-5/6 m-auto p-10 order">
     <OrderTopPart />
 
     <OrderCartEmpty v-if="carts.length === 0 && !isAdded" />
@@ -43,4 +43,42 @@ export default {
 };
 </script>
 
-<style scoped></style>
+<style scoped>
+.order-container {
+  width: 83%;
+  margin: 0 auto;
+  padding: 40px;
+}
+
+@media (max-width: 768px) {
+  .order-container {
+    width: 95%;
+    padding: 20px;
+  }
+}
+
+@media (max-width: 480px) {
+  .order-container {
+    width: 100%;
+    padding: 10px;
+  }
+
+  .order-container h1 {
+    font-size: 1rem;
+    text-align: center;
+  }
+
+  .order-container .order-card {
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+  }
+
+  .order-container button {
+    width: 100%;
+    font-size: 0.85rem;
+    margin-top: 8px;
+  }
+}
+
+</style>
