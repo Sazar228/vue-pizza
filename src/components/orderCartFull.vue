@@ -68,7 +68,6 @@ import { inject } from 'vue';
 .order-card .card-inner {
   display: flex;
   align-items: center;
-  flex-wrap: wrap;
   padding: 12px;
 }
 
@@ -77,20 +76,17 @@ import { inject } from 'vue';
   height: auto;
   margin-right: 15px;
   border-radius: 8px;
-  flex-shrink: 0;
 }
 
 .order-card .info {
-  flex: 1 1 150px;
-  min-width: 0;
+  flex: 1;
 }
 
 .order-card .actions {
   display: flex;
   align-items: center;
   justify-content: space-around;
-  flex: 1 1 100%;
-  margin-top: 12px;
+  flex: 1;
 }
 
 @media (max-width: 768px) {
@@ -99,6 +95,7 @@ import { inject } from 'vue';
   }
 
   .order-card .card-inner {
+    flex-wrap: wrap;
     gap: 12px;
   }
 
@@ -107,41 +104,49 @@ import { inject } from 'vue';
     margin: 0;
   }
 
+  .order-card .info {
+    flex: 1 1 180px;
+    min-width: 0;
+  }
+
   .order-card .actions {
+    flex: 1 1 100%;
+    justify-content: space-between;
     gap: 12px;
-    justify-content: flex-end;
+  }
+
+  .order-card .actions p {
+    margin-left: 0;
+    white-space: nowrap;
   }
 }
 
-@media (max-width: 560px) {
+@media (max-width: 480px) {
   .order-card .card-inner {
-    display: grid;
-    grid-template-columns: 64px minmax(0, 1fr);
-    gap: 8px 12px;
+    gap: 8px;
     padding: 10px;
   }
 
   .order-card img {
-    grid-row: span 2;
-    width: 64px;
+    width: 60px;
   }
 
   .order-card .info {
-    min-width: 0;
+    flex-basis: calc(100% - 72px);
   }
 
   .order-card .info h1 {
-    font-size: 1rem;
+    font-size: 1.1rem;
+    overflow-wrap: anywhere;
   }
 
   .order-card .info p {
-    font-size: 0.85rem;
+    font-size: 0.9rem;
   }
 
   .order-card .actions {
-    grid-column: 2;
-    width: 100%;
     justify-content: space-between;
+    flex-wrap: wrap;
     gap: 8px;
   }
 
@@ -150,22 +155,7 @@ import { inject } from 'vue';
   }
 
   .order-card .actions p {
-    font-size: 0.95rem;
-    white-space: nowrap;
-  }
-
-  .order-card .info {
-    flex-basis: 100%;
-    text-align: center;
-  }
-
-  .order-card img {
-    margin: 0 auto 10px;
-  }
-
-  .order-card .card-inner {
-    flex-direction: column;
-    align-items: center;
+    font-size: 1rem;
   }
 }
 </style>
