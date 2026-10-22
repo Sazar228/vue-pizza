@@ -63,13 +63,13 @@
 
 @media (max-width: 480px) {
   .categories {
-    flex-direction: column;
-    align-items: center;
+    width: 100%;
+    justify-content: flex-start;
     gap: 8px;
   }
 
   .categories button {
-    width: 100%;
+    flex: 1 1 auto;
     font-size: 0.85rem;
     padding: 6px 10px;
   }

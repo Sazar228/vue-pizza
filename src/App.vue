@@ -9,7 +9,6 @@ import { Dough } from "./hooks/getTypedough";
 import { Size } from "./hooks/getTypeSize";
 import { cartPrice } from "./hooks/getTotalPrice";
 import { Order } from "./hooks/getOrder";
-import { cartPizza } from "./hooks/getCartPizza";
 import { cartPrices } from "./hooks/getCartPrice";
 import { localStor } from "./hooks/localPart";
 import { RouterView } from "vue-router";
@@ -30,7 +29,7 @@ export default {
     const { changeSize } = Size(pizzas)
 
     const { getPrice,allPriceCart } = cartPrice(carts)
-    const { cartEmpty,btnDisable,localCart,checkLocalCart } = localStor(isCreatingOrder,carts,pizzas)
+    const { localCart,checkLocalCart } = localStor(isCreatingOrder,carts,pizzas)
 
 
     provide('categories',categories,pizzas)
@@ -67,8 +66,6 @@ export default {
       carts,
       allPriceCart,
       isCreatingOrder,
-      cartEmpty,
-      btnDisable,
       localCart,
       checkLocalCart,
       cartCount,

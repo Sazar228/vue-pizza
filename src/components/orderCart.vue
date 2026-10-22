@@ -1,5 +1,5 @@
 <template>
-  <div v-auto-animate class="w-5/6 m-auto p-10 order">
+  <div v-auto-animate class="order-container">
     <OrderTopPart />
 
     <OrderCartEmpty v-if="carts.length === 0 && !isAdded" />
@@ -45,7 +45,7 @@ export default {
 
 <style scoped>
 .order-container {
-  width: 83%;
+  width: min(100%, 960px);
   margin: 0 auto;
   padding: 40px;
 }

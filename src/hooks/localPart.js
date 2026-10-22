@@ -1,10 +1,10 @@
 import { computed, watch } from "vue";
 
 export function localStor(isCreatingOrder, carts, pizzas) {
-  const cartEmpty = computed(() => carts.value.length === 0);
-  const btnDisable = computed(() => {
-    return isCreatingOrder.value || cartEmpty.value;
-  });
+  // const cartEmpty = computed(() => carts.value.length === 0);
+  // const btnDisable = computed(() => {
+  //   return isCreatingOrder.value || cartEmpty.value;
+  // });
 
   const localCart = () => {
     const localCart = localStorage.getItem("cart");
@@ -35,8 +35,7 @@ export function localStor(isCreatingOrder, carts, pizzas) {
 
 
   return{
-    cartEmpty,
-    btnDisable,
+
     localCart,
     checkLocalCart
   }

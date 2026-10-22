@@ -45,7 +45,7 @@ export function Order (pizzas) {
     }
     const removeToCart = (pizzaId,readyPrice) =>{
         const index = carts.value.findIndex(p=>p.id===pizzaId && p.finalPrice === readyPrice)
-        if(index !==-1){
+        if(index >= 0){
             carts.value.splice(index,1)
         }
     }
